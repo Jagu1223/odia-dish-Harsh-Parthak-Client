@@ -129,7 +129,7 @@ const CartDetails = () => {
     // );
 
     const response = await fetch(
-      "https://odia-dish-harsh-parthak-server-2.onrender.com/api/create-checkout-session",
+      "https://odia-dish-harsh-parthak-server-3.onrender.com/api/create-checkout-session",
       {
         method: "POST",
         headers: headers,
