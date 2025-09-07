@@ -1,0 +1,15 @@
+.success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px); /* remaining height */
+  background: lightblue;
+  gap: 30px;
+}
+
+.button {
+  background-color: red;
+  width: 150px;
+  border: none;
+}
