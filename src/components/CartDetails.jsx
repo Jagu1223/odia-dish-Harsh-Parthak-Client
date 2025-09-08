@@ -128,20 +128,34 @@ const CartDetails = () => {
     //   }
     // );
 
+    // const response = await fetch(
+    //   "https://odia-dish-harsh-parthak-server-3.onrender.com/api/create-checkout-session",
+    //   {
+    //     method: "POST",
+    //     headers: headers,
+    //     body: JSON.stringify(body),
+    //   }
+    // );
+
+    // const session = await response.json();
+
+    // const result = stripe.redirectToCheckout({
+    //   sessionId: session.id,
+    // });
+
     const response = await fetch(
       "https://odia-dish-harsh-parthak-server-3.onrender.com/api/create-checkout-session",
       {
         method: "POST",
-        headers: headers,
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       }
     );
 
     const session = await response.json();
-
-    const result = stripe.redirectToCheckout({
-      sessionId: session.id,
-    });
+    if (session.url) {
+      window.location.href = session.url; // redirect to Stripe Checkout
+    }
 
     if (result.error) {
       console.log(result.error);
